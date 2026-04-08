@@ -212,7 +212,7 @@ elif page == "Predictions & Forecasting":
         color = 'green' if val == 'BUY' else 'red' if val == 'SELL' else 'orange'
         return f'color: {color}; font-weight: bold'
         
-    st.dataframe(f_df.style.applymap(color_signal, subset=['Signal']).format(precision=2))
+    st.dataframe(f_df.style.map(color_signal, subset=['Signal']).format(precision=2))
     
     st.subheader("5-Day Predicted Change (%)")
     fig, ax = plt.subplots(figsize=(10, 5))
